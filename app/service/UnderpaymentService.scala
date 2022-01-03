@@ -17,14 +17,10 @@ class UnderpaymentService @Inject()(underpaymentsRepository: UnderpaymentsReposi
     underpaymentsRepository.bulkSave(nino, periodId, underpayments)
   }
 
-
   def save(nino: String, periodId: String, underpayment: Underpayment): Future[Boolean] =
     underpaymentsRepository.save(nino, periodId, underpayment)
 
   def lookup(nino: String, periodId: String): Future[List[Underpayment]] = {
     underpaymentsRepository.lookup(nino, periodId)
-//    Future {
-//      Underpayment("2011", 234.22, "UK SA")
-//    }
   }
 }
